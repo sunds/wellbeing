@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: MicroWebSrv2
+Version: master
+Summary: Embedded webserver for MicroPython and CPython
+Home-page: https://github.com/jczic/MicroWebSrv2
+Author: Jean-Christophe Bos
+Author-email: jcb@hc2.fr
+License: UNKNOWN
+Download-URL: https://github.com/jczic/MicroWebSrv2/archive/master.zip
+Description: MicroWebSrv2 is the new powerful embedded Web Server for MicroPython and CPython that supports route handlers, modules like WebSockets or PyhtmlTemplate and a lot of simultaneous requests (in thousands!).
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Environment :: Web Environment
+Classifier: Topic :: Internet :: WWW/HTTP

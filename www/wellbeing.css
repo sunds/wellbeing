@@ -1,0 +1,167 @@
+body {
+    display: grid;
+    position: static;
+    padding: 0px; 
+    margin: 0px;
+    height: 100%; 
+    width: var(--vw, 200px);
+    box-sizing: border-box;
+    padding:1px;
+    overflow: hidden;
+    overflow-y: hidden!important;
+
+}
+
+.page {
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-columns: 70px 25px 160px 2fr 3fr 25px;
+    grid-template-rows: 35px var(--vh, 200px) 10px;
+    grid-template-areas: 
+        "status heartbeat current none datetime settings"
+        "graph graph graph graph graph graph"
+        "footer footer footer footer footer footer";
+}
+* {
+    box-sizing: border-box;
+}
+
+#status {
+    grid-area: status;
+}
+#current {
+    grid-area: current;
+}
+
+#heartbeat {
+    grid-area: heartbeat;
+}
+
+#datetime {
+    grid-area: datetime;
+    text-align: end;
+    margin-bottom: 0px;
+}
+
+#beat {
+    color:slategray;
+}
+
+#settings {
+    grid-area: settings;
+}
+
+@media only screen 
+and (max-width : 500px)  {
+    #date {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.label {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top:5px;
+    margin-bottom: 3px;
+    font: normal 18px Verdana, Helvetica, Arial, sans-serif;
+}
+
+#statusvalue  {
+    /*background:rgb(136, 218, 136); */
+    background: green;
+    color:white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#currentvalue  {
+    background:slategray; 
+    color:white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#timevalue {
+    display: inline-block;
+    font: normal 12px Verdana, Helvetica, Arial, sans-serif;
+    text-align: right;
+}
+
+#datevalue {
+    display: inline-block;
+    font: normal 12px Verdana, Helvetica, Arial, sans-serif;
+    text-align: right;
+}
+
+#timegraph {
+    grid-area: graph;
+    overflow: scroll; 
+    outline: 1px; 
+    outline-style: solid;
+    opacity: .8;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: slategray;
+    background: #ebf0ff;
+
+}
+#footer {
+    grid-area: footer;
+    align-content: center;
+    text-align: center;
+}
+
+
+.timegraph {
+    display: grid;
+    height: 100%;
+}
+
+.svg {
+    height: 100%;
+}
+.timeline {
+    stroke:black;
+    opacity:1;
+    stroke-width:1;
+}
+
+.serieslabel {
+    stroke:black;
+    text-anchor:middle;
+    font: normal 10px Verdana, Helvetica, Arial, sans-serif;
+}
+
+.event {
+    stroke:black;
+    stroke-opacity:1;
+    fill:red; 
+    fill-opacity:1;
+    stroke-width:1;
+}
+
+.modaldialog {
+    position: absolute;
+    border-radius: 5px;
+    top: 50%; 
+    left: 50%;  
+    transform: 
+    translate(-50%, -50%);
+    z-index: 9;
+    outline: 2px; 
+    outline-style: outset;
+    outline-width: thin;
+    outline-color: slategray;
+    padding:6px;
+    background:white;
+    opacity: 100%;
+    display: none;
+    background: #f6f7e2;
+}
+
+.modaldialog > table {
+    margin:0;
+    font: normal 18px Avenir, Arial, sans-serif;
+}

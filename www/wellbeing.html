@@ -1,0 +1,89 @@
+<!--
+The MIT License (MIT)
+Copyright © 2020 David Sundstrom
+
+Wellbeing Water Well Monitor and Guard
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="wellbeing.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+</head>
+<script src="wellbeing.js"></script>
+
+<body onload="initialize()">
+
+  <div class="page">
+  <span id="status" class="label" onclick="toggleFault()"><span id="statusvalue">?</span></span>
+  <span id="current" class="label" ><span id="currentvalue">???? A</span></span>
+  <span id="heartbeat" class="label" ><span id="beat" style="display:none;">&#x26A1;</span></span>
+  <span id="datetime" class="label">
+    <span id="time" ><span id="timevalue">0</span></span>
+    <span id="date"  ><span id="datevalue">0</span></span>
+  </span>
+  <span id="settings" class="label" onclick="openConfig()"><img id="drop" src="drop.svg"/></span>
+
+  <div class="timegraph" id="timegraph">
+   <!-- SVG injected by Javascript here -->
+  </div>
+
+  <div class="modaldialog" id="stats" onclick="close_detail()">
+    <table>
+      <tr>
+        <td>Date</td>
+        <td id="detail_date">Never</td>
+      </tr>
+      <tr>
+        <td>Time</td>
+        <td id="detail_time">00:00:00</td>
+      </tr>
+      <tr>
+        <td>Runtime (minutes):</td>
+        <td id="detail_runtime">00:00</td>
+      </tr>
+      <tr>
+        <td>Min Current</td>
+        <td id="detail_min">0</td>
+      </tr>
+      <tr>
+        <td>Avg Current</td>
+        <td id="detail_avg">0</td>
+      </tr>
+      <tr>
+        <td>Max Current</td>
+        <td id="detail_max">0</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="modaldialog" id="config">
+    <table>
+      <tr>
+        <td><button onclick="factoryReset()">Factory Reset</button></td>
+      </tr>
+      <tr>
+        <td>Max Runtime (seconds)</td>
+        <td id="config_runtime"><input type="number" id="config_maxRuntime" min="10" max="3600"/></td>
+      </tr>
+      <tr>
+        <td>Max Cycles (per day)</td>
+        <td id="config_cycles"><input type="number" id="config_maxCycles" min="1" max="2880"/></td>
+      </tr>
+      <tr>
+        <td>On Threshold (amps)</td>
+        <td id="config_threshold"><input type="number" id="config_minCurrent" min="0" max="20"/></td>
+      </tr>
+      <tr>
+        <td><button onclick="closeConfig(false)">Cancel</button></td>
+        <td><button onclick="closeConfig(true)">Save</button></td>
+      </tr>
+    </table>
+  </div>
+
+<div id="footer"></div>
+</div>
+</body>
+</html>

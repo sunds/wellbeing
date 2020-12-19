@@ -1,0 +1,35 @@
+<?xml version="1.0"?><svg width="32px" height="48px" viewBox="80 200 560 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <filter x="-0.307751" width="1.615501" y="-0.25745" height="1.5149" id="filter3537">
+   <feGaussianBlur stdDeviation="13.005789" id="feGaussianBlur3539"/>
+  </filter>
+  <linearGradient id="linearGradient3534">
+   <stop stop-color="#ffffff" offset="0" id="stop3536"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1" id="stop3538"/>
+  </linearGradient>
+  <linearGradient id="linearGradient3544">
+   <stop stop-color="#ffffff" offset="0" id="stop3546"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1" id="stop3548"/>
+  </linearGradient>
+  <linearGradient id="linearGradient3558">
+   <stop stop-color="#001651" stop-opacity="0.87069" offset="0" id="stop3560"/>
+   <stop stop-color="#0041f1" stop-opacity="0" offset="1" id="stop3562"/>
+  </linearGradient>
+  <radialGradient r="189.35699" fy="658.84564" fx="481.38342" cy="658.84564" cx="481.38342" gradientTransform="matrix(0.483869, -0.445486, 0.449192, 0.43738, -231.964, 262.988)" gradientUnits="userSpaceOnUse" id="radialGradient2469" xlink:href="#linearGradient3534"/>
+  <radialGradient r="197.2068" fy="350.62665" fx="271.67026" cy="350.62665" cx="271.67026" gradientTransform="matrix(0.450164, 0.230281, -0.770694, 1.35061, 311.426, -385.274)" gradientUnits="userSpaceOnUse" id="radialGradient2471" xlink:href="#linearGradient3544"/>
+  <radialGradient r="197.2068" fy="397.85736" fx="457.12711" cy="397.85736" cx="457.12711" gradientTransform="matrix(-0.387037, -0.851704, 0.88537, -0.36068, 112.253, 699.108)" gradientUnits="userSpaceOnUse" id="radialGradient2473" xlink:href="#linearGradient3558"/>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g id="g2462">
+    <path opacity="0.698551" fill="#0041f1" fill-opacity="0.526012" fill-rule="evenodd" stroke-width="3" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" d="m332.41687,274.296326c0,61.623627 -54.296112,111.636993 -121.196777,111.636993c-66.90065,0 -122.434471,-50.024506 -121.196678,-111.636993c1.644585,-82.645493 68.275597,-116.308502 121.196678,-211.296326c56.21048,91.873489 121.196777,149.672729 121.196777,211.296326z" id="path2530"/>
+    <path opacity="0.698551" fill="url(#radialGradient2469)" fill-rule="evenodd" stroke-width="3" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" d="m328.232544,274.037384c0,59.170593 -52.134888,107.193237 -116.372467,107.193237c-64.237671,0 -117.561043,-48.033295 -116.372627,-107.193237c1.579163,-79.35585 65.557976,-111.678925 116.372627,-202.885765c53.97287,88.216454 116.372467,143.715034 116.372467,202.885765z" id="path3520"/>
+    <path opacity="0.698551" fill="url(#radialGradient2471)" fill-rule="evenodd" stroke-width="3" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" d="m326.208252,271.743927c0,58.467072 -51.514862,105.91861 -114.988754,105.91861c-63.47374,0 -116.162842,-47.462128 -114.988533,-105.91861c1.560402,-78.412155 64.778313,-110.350845 114.988533,-200.473122c34.481476,290.738564 114.988754,142.00605 114.988754,200.473122z" id="path3542"/>
+    <path opacity="0.698551" fill="url(#radialGradient2473)" fill-rule="evenodd" stroke-width="3" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" d="m332.41687,274.296326c0,61.623627 -54.296112,111.636993 -121.196777,111.636993c-66.90065,0 -122.434471,-50.024506 -121.196678,-111.636993c1.644585,-82.645493 68.275597,-116.308502 121.196678,-211.296326c56.21048,91.873489 121.196777,149.672729 121.196777,211.296326z" id="path3556"/>
+    <path opacity="0.823188" fill="#ffffff" fill-opacity="0.800578" fill-rule="evenodd" stroke-width="3" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" filter="url(#filter3537)" id="path3541" d="m167.317383,164.732666a14.09691,8.498083 0 1 1-28.193848,31.516434a14.09691,8.498083 0 1 128.193848,-31.516434z"/>
+   </g>
+  </g>
+ </g>
+</svg>
