@@ -134,7 +134,7 @@ function generateSvg(data) {
 
    x = Math.trunc(3000 + (e[0] * 50));
    y = Math.trunc((288 - (((e[4] * 60) + e[5]) / 5)) + 14); // 288 pixel range
-   d = Math.trunc((e[7] / 20) + 5);
+   d = Math.min(Math.max(Math.trunc(e[7] / 5), 5), 50); // Bound between 5 px and 50 px
    o = ((e[10]/ 10)*100) % 1; // >= 10A is full opacity
 
    sums[x] = (sums[x] || 0) + e[7];
