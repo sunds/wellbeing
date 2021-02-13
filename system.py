@@ -185,10 +185,11 @@ class LogEntry():
 
 class ConfigEntry:
 
-    def __init__(self):
+    def __init__(self, bootTime):
         self.maxRuntime = 8 * 60 # max individual runtime in seconds
         self.maxCycles = 360 # max cycles per day
-        self.minCurrent = .123 # on threshold in amps
+        self.minCurrent = .250 # on threshold in amps
+        self.bootTime = bootTime
 
     def setConfig(self, maxCycles, maxRuntime, minCurrent):
         self.maxCycles = maxCycles
@@ -203,14 +204,14 @@ class ConfigEntry:
         return key
 
     def getBinaryValue(self) -> []:
-        value = struct.pack("!III",
+        value = struct.pack("!IIf",
                             self.maxRuntime,
                             self.maxCycles,
                             self.minCurrent)
         return value
 
     def fromBinary(self, b):
-        t = struct.unpack("!III", b)
+        t = struct.unpack("!IIf", b)
         self.maxRuntime = t[0]
         self.maxCycles = t[1]
         self.minCurrent = t[2]
@@ -248,7 +249,7 @@ class PumpManager():
         self.lamp =machine.Pin(PumpManager.LampPin, machine.Pin.OUT)
         self.lamp.value(0)
 
-        self.config = ConfigEntry()
+        self.config = ConfigEntry(self.rtc.getDateTime())
         if (self.config.getBinaryKey() in self.db):
             self.config.fromBinary(self.db[self.config.getBinaryKey()])
 

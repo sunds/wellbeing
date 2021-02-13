@@ -64,7 +64,11 @@ Wellbeing Water Well Monitor and Guard
       <tr>
         <td><button onclick="factoryReset()">Factory Reset</button></td>
       </tr>
-      <tr>
+       <tr>
+        <td>Boot Time</td>
+         <td id="config_bootTime"><span id="config_bootTime_value"></span></td>
+      </tr>
+     <tr>
         <td>Max Runtime (seconds)</td>
         <td id="config_runtime"><input type="number" id="config_maxRuntime" min="10" max="3600"/></td>
       </tr>
@@ -74,7 +78,7 @@ Wellbeing Water Well Monitor and Guard
       </tr>
       <tr>
         <td>On Threshold (amps)</td>
-        <td id="config_threshold"><input type="number" id="config_minCurrent" min="0" max="20"/></td>
+        <td id="config_threshold"><input type="text" id="config_minCurrent" min="0" max="20"/></td>
       </tr>
       <tr>
         <td><button onclick="closeConfig(false)">Cancel</button></td>

@@ -135,7 +135,7 @@ function generateSvg(data) {
    x = Math.trunc(3000 + (e[0] * 50));
    y = Math.trunc((288 - (((e[4] * 60) + e[5]) / 5)) + 14); // 288 pixel range
    d = Math.min(Math.max(Math.trunc(e[7] / 5), 5), 50); // Bound between 5 px and 50 px
-   o = ((e[10]/ 10)*100) % 1; // >= 10A is full opacity
+   o = Math.trunc(((e[10]/ 10) % 1) * 255); // >= 10A is full on
 
    sums[x] = (sums[x] || 0) + e[7];
 
@@ -143,7 +143,7 @@ function generateSvg(data) {
    s = padTime(e[7]%60);
 
    html += `
-      <circle id="${x}_${y}_${d}" class="event" onclick="open_detail('${x}_${y}_${d}', '${dateToString(dt)}', '${timeToString(dt)}', '${m}:${s}', '${e[8]}', '${e[9]}', '${e[10]}')" cx="${x}" cy="${y}" r="${d}" style="fill-opacity: ${o};"/>
+      <circle id="${x}_${y}_${d}" class="event" onclick="open_detail('${x}_${y}_${d}', '${dateToString(dt)}', '${timeToString(dt)}', '${m}:${s}', '${e[8]}', '${e[9]}', '${e[10]}')" cx="${x}" cy="${y}" r="${d}" stroke="black" stroke-width="1" fill="rgb(${o},0,0)"/>
    `;
   }
 
@@ -225,12 +225,16 @@ function openConfig() {
         .then(data => {
             o = JSON.parse(data);
             console.log(o);
+             //  YY, MM, DD, hh, mm, ss
+            dt = new Date(o.bootTime[0], o.bootTime[1]-1, o.bootTime[2], o.bootTime[3], o.bootTime[4], o.bootTime[5]); // python date is 1 based
+
             document.getElementById("config_maxRuntime").value = o.maxRuntime;
             document.getElementById("config_maxCycles").value = o.maxCycles;
             document.getElementById("config_minCurrent").value = o.minCurrent;
             document.getElementById("config_maxRuntime").disabled = false;
             document.getElementById("config_maxCycles").disabled = false;
             document.getElementById("config_minCurrent").disabled = false;
+            document.getElementById("config_bootTime_value").innerHTML = dateToString(dt) + " " + timeToString(dt);
         });
 }
 
@@ -239,7 +243,7 @@ function closeConfig(save) {
         var c = {
             maxRuntime: parseInt(document.getElementById("config_maxRuntime").value),
             maxCycles: parseInt(document.getElementById("config_maxCycles").value),
-            minCurrent: parseInt(document.getElementById("config_minCurrent").value)
+            minCurrent: parseFloat(document.getElementById("config_minCurrent").value)
         }
         fetch("/api/setConfig", {
             method: "POST",
